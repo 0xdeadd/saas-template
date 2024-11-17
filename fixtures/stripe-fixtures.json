@@ -1,40 +1,29 @@
 {
   "fixtures": [
     {
-      "name": "prod_standard",
+      "name": "prod_freelancer",
       "path": "/v1/products",
       "method": "post",
       "params": {
-        "name": "Standard Plan",
-        "description": "Standard subscription plan",
+        "name": "Freelancer",
+        "description": "Professional subscription plan with all features included",
+        "active": true,
         "metadata": {
           "index": 0
         }
       }
     },
     {
-      "name": "price_standard_month",
+      "name": "price_freelancer_month",
       "path": "/v1/prices",
       "method": "post",
       "params": {
-        "product": "${prod_standard:id}",
+        "product": "${prod_freelancer:id}",
         "currency": "usd",
         "unit_amount": 2000,
+        "active": true,
         "recurring": {
           "interval": "month"
-        }
-      }
-    },
-    {
-      "name": "price_standard_year",
-      "path": "/v1/prices",
-      "method": "post",
-      "params": {
-        "product": "${prod_standard:id}",
-        "currency": "usd",
-        "unit_amount": 20000,
-        "recurring": {
-          "interval": "year"
         }
       }
     }
